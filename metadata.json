@@ -1,0 +1,7 @@
+{
+  "name": "Taiwan Gourmet Critic",
+  "description": "A Japanese-minimalist style gourmet web app to search restaurants via Google Maps (Gemini), record reviews, and track culinary experiences.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}

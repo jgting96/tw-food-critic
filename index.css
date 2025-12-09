@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Noto Sans TC', sans-serif;
+  background-color: #fffaf7; /* User requested: Background color */
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom UI Utility Classes extracted from App.tsx */
+.label-text { 
+  @apply block text-xs font-bold text-slate-500 mb-1; 
+}
+.input-field { 
+  @apply w-full bg-white border border-slate-200 rounded-lg p-2.5 text-sm focus:outline-none focus:border-orange-500 transition-colors; 
+}
+.pb-safe { 
+  padding-bottom: env(safe-area-inset-bottom, 80px); 
+}
+
+/* Animations */
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slide-in-right { from { transform: translateX(100%); } to { transform: translateX(0); } }
+@keyframes fade-in-up { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+.animate-fade-in { animation: fade-in 0.3s ease-out; }
+.animate-slide-in-right { animation: slide-in-right 0.3s ease-out; }
+.animate-fade-in-up { animation: fade-in-up 0.3s ease-out; }
+
+/* Custom Scrollbar - Updated to Orange Theme */
+.custom-scrollbar::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    display: block;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #EFB476; /* Orange 500 */
+    border-radius: 3px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #ad591c; /* Orange 600 */
+}
+
+/* Markdown Styles - Updated Links to Orange */
+.markdown-body ul { list-style-type: disc; padding-left: 1.2em; margin-bottom: 0.5em; }
+.markdown-body ol { list-style-type: decimal; padding-left: 1.2em; margin-bottom: 0.5em; }
+.markdown-body strong { font-weight: 700; color: #334155; }
+.markdown-body em { font-style: italic; }
+.markdown-body blockquote { border-left: 3px solid #e2e8f0; padding-left: 0.8em; color: #64748b; margin-bottom: 0.5em; }
+.markdown-body h1 { font-size: 1.25em; font-weight: 700; margin-bottom: 0.25em; margin-top: 0.5em; }
+.markdown-body h2 { font-size: 1.1em; font-weight: 700; margin-bottom: 0.25em; margin-top: 0.5em; }
+.markdown-body a { color: #ad591c; text-decoration: underline; }
+.markdown-body p { margin-bottom: 0.5em; }
+.markdown-body code { background: #f1f5f9; padding: 2px 4px; rounded: 4px; font-family: monospace; font-size: 0.9em; }
